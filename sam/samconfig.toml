@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "login-server-httpapi-dev-master"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-a61ilrg9wfkn"
+s3_prefix = "login-server-httpapi-dev-master"
+region = "ap-southeast-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "StaxStage=dev StaxBranch=master"
+

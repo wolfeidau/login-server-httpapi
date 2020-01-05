@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  title: login-server-httpapi
+  description: An API which enables users to login.
+  version: 2020-01-05
+paths:
+  /login:
+    get:
+      summary: get the login form
+      tags:
+      - login
+      responses:
+        '200':
+          description: display the login form
+          content:
+            text/html:
+              schema:
+                type: string
+      x-amazon-apigateway-integration:
+        uri:
+          Fn::Sub: arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LoginAPIFunction.Arn}:/invocations
+        httpMethod: POST
+        type: aws_proxy
+        passthroughBehavior: never

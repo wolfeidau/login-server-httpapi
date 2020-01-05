@@ -1,0 +1,4 @@
+/dist
+.bin
+handler.zip
+.envrc
